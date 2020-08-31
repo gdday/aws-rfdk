@@ -7,7 +7,7 @@ set -euo pipefail
 
 OPTION=${1:-undefined}
 
-if [ $(basename $(pwd)) != "renderQueue" ]; then
+if [[ $(basename $(pwd)) != *renderQueue ]]; then
   echo "ERROR: Script must be run from top directory of test component"
   exit 1
 fi

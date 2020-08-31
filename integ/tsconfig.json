@@ -27,7 +27,7 @@
   ],
   "references": [
     {
-      "path": "../packages/aws-rfdk"
+      "path": "../packages/aws-rfdk/"
     }
   ]
 }

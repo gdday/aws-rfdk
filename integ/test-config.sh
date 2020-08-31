@@ -5,8 +5,8 @@
 
 # Configure test suites to include in end-to-end test
 export EXECUTE_DEADLINE_REPOSITORY_TEST_SUITE=true
-export EXECUTE_DEADLINE_RENDERQ_TEST_SUITE=true
-export EXECUTE_DEADLINE_WORKER_TEST_SUITE=true
+export EXECUTE_DEADLINE_RENDERQ_TEST_SUITE=false
+export EXECUTE_DEADLINE_WORKER_TEST_SUITE=false
 
 # Version of Deadline to install on farm resources.
 #   -  If not set here, will default to 10.1.9.2
@@ -20,7 +20,7 @@ export DEADLINE_STAGING_PATH
 # Options for Deadline Repository test component
 # Accept SSPL license to install MongoDB
 #   - If not set to `true` here, the Repository test component will fail immediately on execution
-export USER_ACCEPTS_SSPL_FOR_RFDK_TESTS=false
+export USER_ACCEPTS_SSPL_FOR_RFDK_TESTS=true
 
 # Options for Deadline WorkerInstanceFleet test component
 # EC2 AMIs to use for Deadline workers

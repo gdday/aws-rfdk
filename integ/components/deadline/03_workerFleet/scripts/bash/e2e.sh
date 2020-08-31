@@ -7,7 +7,7 @@ set -euo pipefail
 
 OPTION=${1:-undefined}
 
-if [ $(basename $(pwd)) != "repository" ]; then
+if [[ $(basename $(pwd)) != *workerFleet ]]; then
   echo "ERROR: Script must be run from top directory of test component"
   exit 1
 fi
@@ -15,14 +15,14 @@ fi
 # Load utility functions
 source "../common/functions/deploy-utils.sh"
 
-if [ $EXECUTE_DEADLINE_REPOSITORY_TEST_SUITE = true ]; then
-  
+if [ $EXECUTE_DEADLINE_WORKER_TEST_SUITE == true ]; then
+
   if [[ $OPTION != '--destroy-only' ]]; then
-    deploy_component_stacks "Deadline Repository"
-    execute_component_test "deadline-repository"
+    deploy_component_stacks "Deadline WorkerInstanceFleet"
+    execute_component_test "deadline-workerFleet"
   fi
   if [[ $OPTION != '--deploy-only' ]]; then
-    destroy_component_stacks "Deadline Repository"
+    destroy_component_stacks "Deadline WorkerInstanceFleet"
   fi
 
 fi
